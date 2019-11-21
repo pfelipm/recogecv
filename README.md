@@ -12,10 +12,16 @@ RecogeCV es parametrizable:
   <li> Exigencia o no de consentimiento para el tratamiento de datos.
   <li> Carpeta de destino en Drive para los CV recibidos.
   <li> Color de iconos, texto de los campos del formulario y botón de envío.    
-  <li> Notificaciones por e-mail a los gestors del formulario.
+  <li> Notificaciones por e-mail a los gestores del formulario.
 </ul>
 
-RecogeCV se distribuye bajo licencia CC-BY-NC-SA. Puedes acceder al código fuente en este repositorio. También puedes consultar información detallada sobre su uso aquí: https://www.gsuiteparaeducacion.tk/2019/11/webapprecogecv.html
+Puedes verla en acción aquí:
+https://sites.google.com/view/recogecv/test-recogecv
+
+Puedes consultar información detallada sobre su uso aquí:
+https://www.gsuiteparaeducacion.tk/2019/11/webapprecogecv.html
+
+RecogeCV se distribuye bajo licencia CC-BY-NC-SA. Puedes acceder al código fuente en este repositorio.
 
 Pablo Felip Monferrer<br>
 <a href="https://twitter.com/pfelipm" target="_blank">@pfelipm</a>
