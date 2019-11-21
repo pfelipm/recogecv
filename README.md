@@ -4,7 +4,7 @@ RecogeCV es una hoja de cálculo + webapp desarrollada con Google Apps Script qu
 
 RecogeCV es parametrizable:
 <ul>
-  <li> Texto y tamaño del título del formulario
+  <li> Texto y tamaño del título del formulario.
   <li> Color de iconos, texto de los campos del formulario y botón de envío.
   <li> Logotipo.
   <li> Instrucciones de uso del formulario
