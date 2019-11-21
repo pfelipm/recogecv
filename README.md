@@ -15,11 +15,11 @@ RecogeCV es parametrizable:
   <li> Notificaciones por e-mail a los gestores del formulario.
 </ul>
 
-Puedes verla en acción aquí:
-https://sites.google.com/view/recogecv/test-recogecv
+Puedes verla en acción aquí:<br>
+<a href="https://sites.google.com/view/recogecv/test-recogecv" target="_blank">https://sites.google.com/view/recogecv/test-recogecv</a>
 
-Puedes consultar información detallada sobre su uso aquí:
-https://www.gsuiteparaeducacion.tk/2019/11/webapprecogecv.html
+Puedes consultar información detallada sobre su uso aquí:<br>
+<a href="https://www.gsuiteparaeducacion.tk/2019/11/webapprecogecv.html" target="_blank">https://www.gsuiteparaeducacion.tk/2019/11/webapprecogecv.html</a>
 
 RecogeCV se distribuye bajo licencia CC-BY-NC-SA. Puedes acceder al código fuente en este repositorio.
 
