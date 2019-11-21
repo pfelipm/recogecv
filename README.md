@@ -7,7 +7,7 @@ RecogeCV es parametrizable:
   <li> Texto y tamaño del título del formulario.
   <li> Color de iconos, texto de los campos del formulario y botón de envío.
   <li> Logotipo.
-  <li> Instrucciones de uso del formulario
+  <li> Instrucciones para los candidatos.
   <li> Presencia o no de consentimiento para el tratamiento de datos.
   <li> Carpeta de destino en Drive para los CV recibidos.
   <li> Color de iconos, texto de los campos del formulario y botón de envío.    
