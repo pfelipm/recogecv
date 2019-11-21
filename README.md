@@ -16,12 +16,12 @@ RecogeCV es parametrizable:
 </ul>
 
 Puedes verla en acción aquí:<br>
-<a href="https://sites.google.com/view/recogecv/test-recogecv" target="_blank">https://sites.google.com/view/recogecv/test-recogecv</a>
+https://sites.google.com/view/recogecv/test-recogecv
 
 Puedes consultar información detallada sobre su uso aquí:<br>
-<a href="https://www.gsuiteparaeducacion.tk/2019/11/webapprecogecv.html" target="_blank">https://www.gsuiteparaeducacion.tk/2019/11/webapprecogecv.html</a>
+https://www.gsuiteparaeducacion.tk/2019/11/webapprecogecv.html
 
 RecogeCV se distribuye bajo licencia CC-BY-NC-SA. Puedes acceder al código fuente en este repositorio.
 
 Pablo Felip Monferrer<br>
-<a href="https://twitter.com/pfelipm" target="_blank">@pfelipm</a>
+<a href="https://twitter.com/pfelipm">@pfelipm</a>
