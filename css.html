@@ -1,0 +1,51 @@
+<!-- Fuente de iconos de Google -->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<!-- CSS Materialize -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+ 
+<!-- Un poco más de CSS, se admite parametrización mediante scriptlets.
+     Modificar el aspecto de Materialize debe hacerse compilando archivo SASS,
+     como no es posible usando el editor cloud GAS, aplico pequeños hacks css
+     insatisfactorios / incompletos.Referencias:
+     - https://codepen.io/hiteshsahu/pen/EXoPRq
+     - https://stackoverflow.com/questions/45544218/change-the-border-color-of-the-empty-un-checked-check-box-in-materialize
+     - https://stackoverflow.com/questions/44942347/change-the-default-color-of-materialize-css-input-fields-i-have-attached-screen
+     En lo que sigue, aplicar !important extiende el color a estado hover / edit (!?). Prefiero no usarlo para diferenciar
+     claramente elementos "en reposo" y "seleccionados". -->
+
+<style>
+
+  /* Botones */
+  
+  .btn {
+    background-color: <?!= colorTema ?>;
+  }
+  
+  /* Etiquetas formulario */
+
+  .input-field>label {
+    color: <?!= colorTema ?>;
+  }
+
+  /* Línea campos formulario al conseguir foco */
+  
+  input:focus {
+    border-bottom: 1px solid <?!= colorTema ?>;
+    box-shadow: 0 1px 0 0 <?!= colorTema ?>;
+  }
+  
+  /* Iconos */
+ 
+  .input-field>.material-icons {
+     color: <?!= colorTema ?>;
+  }
+
+  /* Casillas de verificación */
+  
+  [type="checkbox"].filled-in:checked + span:not(.lever):after {
+    background-color: <?!= colorTema ?>;
+    border-color: <?!= colorTema ?>;
+  }
+
+</style>

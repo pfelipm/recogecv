@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  
+    <base target="_top">
+    
+    <!-- Incluir css parametrizado (no usado, ver mejora abajo)
+    <!--<?!= HtmlService.createHtmlOutputFromFile('css').getContent(); ?>-->
+    
+    <!-- Incluir css *parametrizado* para aplicar hacks a colores Materialize
+         La evaluación anidada de printing scriptlets no parece funcionar, así que opto
+         por combinar scriptlet (obtener valor) + printing scriptlet (evaluar css parametrizado). -->
+    
+    <? var a = HtmlService.createTemplateFromFile('css');
+       a.colorTema = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(HOJA_AJUSTES).getRange(COLOR_TEMA).getValue(); ?> 
+    <?!= a.evaluate().getContent(); ?>
+
+  </head>
+
+  <body>             
+    
+    <div class="container">
+    
+      <div class="row center-align">
+        <div>
+          <img class="responsive-img" src="<?= urlImgLogo ?>">
+        </div>
+        <div>
+          <h<?= htitulo ?>><?= titulo ?></h<?= htitulo ?>>
+        </div>
+      </div>
+      
+      <!-- Mostrar formulario o mensaje de inactivo -->
+      
+      <? if (SpreadsheetApp.getActiveSpreadsheet().getSheetByName(HOJA_AJUSTES).getRange(FORM_ACTIVO).getValue() == true) { ?>    
+    
+      
+      <div class="row left-align">
+        <div class="col s12">
+          <p><?= instrucciones ?></p>
+        </div>
+      </div>
+  
+      <div class="divider"></div>
+  
+      <div class="section">
+        <form class="col s12" id="formCV">
+          
+          <!-- Formulario: Nombre | Apellidos -->
+          
+          <div class="row">
+            <div class="input-field col s6 l4 offset-s0 offset-l2">
+              <i class="material-icons prefix">person</i>
+              <input id="txt_nombre" name="nombre" type="text" class="validate" required>
+              <label for="txt_nombre">Nombre</label>
+              <span class="helper-text">Requerido</span>
+            </div>
+            <div class="input-field col s6 l4">
+              <i class="material-icons prefix">person_add</i>
+              <input id="txt_apellidos" name="apellidos"  type="text" class="validate" required aria-required="true">
+              <label for="txt_apellidos">Apellidos</label>
+              <span class="helper-text">Requerido</span>
+            </div>  
+          </div>
+          
+          <!-- Formulario: DNI/NIE | Email -->
+          
+          <div class="row">
+            <div class="input-field col s6 l4 offset-s0 offset-l2">
+              <i class="material-icons prefix">label_outline</i>
+              <input id="txt_dni" name="dni" type="text" class="validate" required aria-required="true">
+              <label for="txt_dni">DNI o NIE</label>
+              <span class="helper-text">Requerido</span>
+              </div> 
+            
+            <div class="input-field col s6 l4">
+              <i class="material-icons prefix">email</i>
+              <input id="txt_email"  name="email" type="email" class="validate" required aria-required="true">
+              <label for="txt_email">Correo electrónico</label>
+              <span class="helper-text">Requerido</span>
+              </div> 
+          </div>
+          
+          <!-- Formulario: Teléfono | CV en PDF -->
+          
+          <div class="row">        
+            <div class="input-field col s6 l4 offset-s0 offset-l2">
+              <i class="material-icons prefix">perm_phone_msg</i>
+              <input id="txt_tel" name="telefono" type="text" class="validate" required aria-required="true">
+              <label for="txt_tel">Teléfono</label>
+              <span class="helper-text">Requerido</span>
+            </div> 
+          
+            <div class="file-field input-field col s6 l4">
+              <a class="btn"><i class="material-icons left">cloud_upload</i>
+                <span>CV</span>
+                <input type="file" id="txt_cv" name="cv" required aria-required="true" accept=".pdf, application/pdf">
+              </a>
+              <div class="file-path-wrapper">
+                <input class="file-path validate" type="text">
+                <span class="helper-text">Requerido (PDF)</span>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Mostrar o no sección con consentimiento -->
+          
+          <? if (SpreadsheetApp.getActiveSpreadsheet().getSheetByName(HOJA_AJUSTES).getRange(CONSENTIMIENTO_ACTIVO).getValue() == true) { ?>
+          
+            <div class="row valign-wrapper">   
+              <div class="left">
+                <i class="material-icons left medium red-text accent-3-text">announcement</i>
+              </div>
+              <div class="right">
+                <small>
+                <blockquote><?= consentimiento ?></blockquote>
+                </small>
+              </div>
+            </div>              
+            
+            <div class="row center-align">  
+              <label for="chk_ok">
+              <input type="checkbox" id="chk_ok" name="ok" class="filled-in" required aria-required="true">
+              <span>He leído y acepto la política de privacidad</span>
+              </label>
+            </div>
+          
+          <? } ?>
+          
+          <!-- Botón de envío -->
+          
+          <div class="row center-align">
+            <button id="btn_enviar" class="btn waves-effect waves-light"><i class="material-icons left">send</i>
+              ¡Envía mi candidatura!
+            </button>
+          </div>
+
+        </form>  
+             
+        <!-- Área de estado para mensaje tras envío -->
+        
+        <div id="area_estado" class="center-align hide">
+          <h5 id="msj_estado"></h5>
+        </div>
+        
+        <!-- Indicador de actividad, inicialmente oculto... -->
+        
+        <div id="spinner"class="progress hide">
+          <div class="indeterminate" id="barra_actividad"></div>
+        </div>
+        
+      </div>
+       
+      <? } else { ?>
+        
+        <div class="center-align flow-text">
+          <div class="row center-align col s12">
+            <i class="large material-icons red-text accent-3-text">flash_off</i>
+          </div>
+          <div class="row">
+            <p>Este formulario no está aceptando respuestas</p>
+          </div>
+        </div>
+
+      <? } ?>   
+     
+    </div>
+    
+  </body>
+  
+  <?!= HtmlService.createHtmlOutputFromFile('formularioWeb_js').getContent(); ?>
+  
+</html>

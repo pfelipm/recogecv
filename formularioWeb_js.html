@@ -1,0 +1,75 @@
+<!-- Google API -->
+<script src="https://apis.google.com/js/api.js"></script>
+
+<!-- jQuery ¡¡cargar ANTES que Materialize!! -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+<!-- Materialize -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+<script>
+
+  $(function() {
+      
+    // Manejador clic en botón de envío de formulario
+    
+    $('#formCV').on('submit', function(e){
+    
+      M.toast({html: 'Enviando datos'});      
+      
+      // Impedir mecanismo de envío convencional del formulario
+      
+      e.preventDefault();    
+      
+      // Sustituir botón por spinner
+    
+      $('#btn_enviar').addClass('hide');
+      $('#spinner').removeClass('hide');
+      $('#area_estado').addClass('hide'); // por si venimos de error al enviar
+      
+      // Tratamos de hacer visible el spinner
+          
+      $('#spinner').get(0).scrollIntoView({ behavior: 'smooth'});
+       
+      google.script.run
+      .withSuccessHandler(function(resultado) {
+      
+        M.toast({html: resultado});
+        
+        if (resultado == '✅ Datos enviados') {
+                
+          // Desactivar Spinner y mostrar mensaje
+          
+          $('#spinner').addClass('hide');
+          $('#area_estado').removeClass('hide');
+          $('#msj_estado').text('✅ Datos enviados, puedes cerrar la página.');
+                    
+        }
+        else { // Se han producido errores
+        
+          // Reactivar botón
+          
+          $('#spinner').addClass('hide');
+          $('#btn_enviar').removeClass('hide');
+          $('#area_estado').removeClass('hide');
+          $('#msj_estado').text('❌ Error al realizar la operación, quizás quieras intentarlo más tarde.');
+     
+        }
+        
+      // Tratamos de hacer visible el mensaje de estado
+          
+      $('#msj_estado').get(0).scrollIntoView({ behavior: 'smooth' });        
+        
+      })
+      .withFailureHandler(function(resultado) {
+      
+        M.toast({html: '❌ Error al realizar la operación:\n\n' + resultado});
+      
+      })
+      .enviarFormulario($('#formCV').get(0));
+    
+    });
+ 
+ });
+
+</script>

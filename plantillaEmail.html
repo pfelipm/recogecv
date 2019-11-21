@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <base target="_top">
+  </head>
+  
+  <body>
+  
+    <div style="text-align:center">
+      <img src="<?= urlImgLogo ?>">
+      <h1><?= titulo ?></h1>
+    </div>
+    
+    <p><?= instrucciones ?></p>
+    
+    <hr>
+    
+    <div>
+      <h3><?= textoPersonalizado ?></h3>
+      <ul>
+        <li><b>Candidato: </b><?= candidato ?></li>
+        <li><b>DNI/NIE: </b><?= dni ?></li>
+        <li><b>Email: </b><?= email ?></li>
+        <li><b>Teléfono: </b><?= telefono ?></li>
+        <li><b>Politica privacidad: </b><?= ok ?></li>
+        <li><b>Currículum: </b><a href="<?= archivoURL ?>"><?= archivoNombre ?></a></li>
+        <li><b>Carpeta CV: </b><a href="<?= carpetaURL ?>"><?= carpetaNombre ?></a></li>
+        <li><b>HdC de control: </b><a href="<?= hdcURL ?>"><?= hdcNombre ?></a></li>
+      </ul>
+    </div>
+    
+  </body>
+  
+</html>
