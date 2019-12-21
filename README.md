@@ -14,7 +14,6 @@ RecogeCV es parametrizable:
   <li> Color de iconos, texto de los campos del formulario y botón de envío.    
   <li> Notificaciones por e-mail a los gestores del formulario.
 </ul>
-
 Puedes verla en acción aquí:<br>
 https://sites.google.com/view/recogecv/test-recogecv
 
