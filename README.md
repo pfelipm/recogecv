@@ -17,7 +17,6 @@ RecogeCV es parametrizable:
 Puedes verla en acción aquí:<br>
 https://sites.google.com/view/recogecv/test-recogecv
 
-
 Puedes consultar información detallada sobre su uso aquí:<br>
 https://www.gsuiteparaeducacion.tk/2019/11/webapprecogecv.html
 
