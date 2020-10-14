@@ -15,7 +15,7 @@ RecogeCV es parametrizable:
   <li> Notificaciones por e-mail a los gestores del formulario.
 </ul>
 Puedes verla en acción aquí:<br>
-https://sites.google.com/view/recogecv/test-recogecv
+https://sites.google.com/view/recogecv/test-recogecv<br>
 
 Puedes consultar información detallada sobre su uso diseño e implementación aquí:<br>
 https://www.gsuiteparaeducacion.tk/2019/11/webapprecogecv.html
