@@ -17,7 +17,7 @@ RecogeCV es parametrizable:
 Puedes verla en acción aquí:<br>
 https://sites.google.com/view/recogecv/test-recogecv
 
-Puedes consultar información detallada sobre su uso aquí:<br>
+Puedes consultar información detallada sobre su uso diseño e implementación aquí:<br>
 https://www.gsuiteparaeducacion.tk/2019/11/webapprecogecv.html
 
 RecogeCV se distribuye bajo licencia CC-BY-NC-SA. Puedes acceder al código fuente en este repositorio. También puedes consultar la página de soporte aquí: https://tictools.tk/recogecv.
