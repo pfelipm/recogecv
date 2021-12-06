@@ -1,3 +1,4 @@
+![Creado con - Google Apps Script](https://img.shields.io/static/v1?label=Creado+con&message=Google+Apps+Script&color=blue&style=for-the-badge&logo=GAS)
 # RecogeCV
 
 RecogeCV es una hoja de cálculo + webapp desarrollada con Google Apps Script que genera un formulario web de recogida de candidaturas laborales. La información enviada por los candidatos se almacena de manera ordenada en una pestaña de la hoja de cálculo, en tanto que los CV se guardan en la carpeta de Drive designada.
